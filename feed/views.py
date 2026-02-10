@@ -170,3 +170,11 @@ def follow_user_api(request, username):
         following = True
         
     return JsonResponse({'following': following, 'count': target_profile.followed_by.count()})
+
+@login_required
+def delete_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    # Security Check: Only allow delete if the user owns the post
+    if request.user == post.user:
+        post.delete()
+    return redirect('home')

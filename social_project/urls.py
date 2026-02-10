@@ -14,6 +14,7 @@ urlpatterns = [
     path('like/<int:pk>/', views.like_post, name='like_post'),
     path('comment/<int:post_id>/', views.add_comment, name='add_comment'),
     path('search/', views.search_users, name='search_users'),
+    path('delete/<int:pk>/', views.delete_post, name='delete_post'),
     
     path('inbox/', views.inbox, name='inbox'),
     path('chat/<str:username>/', views.direct_message, name='direct_message'),

@@ -85,9 +85,7 @@
     </div>
 
     <form method="POST" enctype="multipart/form-data" class="input-area">
-        {% csrf_token %}
-        
-        <label class="file-label" title="Attach File">
+        {% csrf_token %} <label class="file-label" title="Attach File">
             <i class="fas fa-paperclip"></i>
             <input type="file" name="file" style="display:none;" onchange="showFileName(this)">
         </label>
